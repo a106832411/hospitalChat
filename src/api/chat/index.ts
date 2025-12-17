@@ -10,6 +10,7 @@ export const getAiAnswer = (data: any) => {
     headers: {
       Authorization: 'Bearer app-jynwANlFJ7x4aZodzN31hk8K',
       'Content-Type': 'application/json',
+       "Accept-Charset": "UTF-8"
     },
   })
 }

@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="flex px-20">
-            <div v-for="(item, index) in example" :key="index"
+            <div v-for="(item, index) in example" :key="index"  @click="senderRef?.setText(`${item.name} ${item.desc}`)"
                 class="bg-white rounded-xl shadow-lg m-2 p-4 w-1/2   cursor-pointer">
                 <div class="text-lg font-semibold mb-2 ">样例：{{ item.name }}</div>
                 <div class="text-gray-600 ">{{ item.desc }}</div>
@@ -32,7 +32,7 @@
             <div>智能开方</div>
             <el-button @click="sendMessage">请求示例</el-button>
         </div>
-        <EditorSender variant="updown" :custom-style="{
+        <EditorSender variant="updown" ref="senderRef" :custom-style="{
             height: '50px',
         }" style="background-color: rgba(255, 255, 255, 0.7);">
 
@@ -54,14 +54,14 @@
 import bot from '/@/assets/img/bot.png'
 import { ElementPlus, Paperclip, Promotion } from '@element-plus/icons-vue';
 import { getAiAnswer } from '/@/api/chat/index'
-
+const senderRef = ref();
 const sendMessage = async () => {
     const prams = {
         "inputs": {
-            "query": "你是谁",
+            "symptom": "陈某，男，40岁。右侧肢体不遂伴复视5个月。患者于2016年3月8日晚剧烈运动后，突然出现持续右侧肢体不遂伴头痛、眩晕、复视、语言謇涩，时神清，无胸闷憋气，二便失禁等症，急查颅脑CT示:脑干出血，出血量约5mL，血压200/160mmHg"
         },
         "response_mode": "streaming",
-        "user": "workflow_user_001"
+        "user": 'user_id'
     }
     const res = await getAiAnswer(prams)
 

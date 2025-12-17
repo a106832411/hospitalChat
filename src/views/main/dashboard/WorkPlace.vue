@@ -72,6 +72,7 @@ import { ElementPlus, Paperclip, Promotion } from '@element-plus/icons-vue';
 import chatPage from './chatPage.vue'
 const clickBot = ref('none')
 const store = useUserStore()
+
 const radio = ref(store.curId)
 const midlist = [
   { label: 'AI研究方向', value: '0' },
@@ -90,7 +91,6 @@ const botlist = [
   { label: '病历质控', value: '6' },
 ]
 const changeBot = (value: string) => {
-
   clickBot.value = value
 }
 </script>

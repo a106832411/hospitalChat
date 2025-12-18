@@ -11,6 +11,12 @@ import ElementPlusX from 'vue-element-plus-x'
 import store from './store'
 import './assets/css/index.css'
 import 'animate.css'
+// 生产环境Mock
+if (import.meta.env.PROD) {
+  import('../mock/setupProdMock').then(({ setupProdMockServer }) => {
+    setupProdMockServer()
+  })
+}
 // 单独引入 ElMessage 和 ElMessageBox 的样式
 import 'element-plus/theme-chalk/el-message.css'
 import 'element-plus/theme-chalk/el-message-box.css'

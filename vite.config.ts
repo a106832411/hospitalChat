@@ -56,7 +56,16 @@ export default defineConfig(({ mode }: ConfigEnv) => {
       // 配置mock
       viteMockServe({
         mockPath: '/mock',
-        localEnabled: true,
+        localEnabled: mode === 'development',
+        prodEnabled: true,
+        injectCode: `
+          import { setupProdMockServer } from './mock/setupProdMock'
+          setupProdMockServer()
+        `,
+        supportTs: true,
+        ignoreStaticFile: true,
+        watchFiles: ['./mock'],
+        logger: false,
       }),
     ],
   }

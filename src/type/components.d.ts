@@ -6,10 +6,6 @@ declare module 'vue' {
   export interface GlobalComponents {
     DDay: typeof import('./../components/three-line-pic/src/DDay.vue')['default']
     DMonth: typeof import('./../components/three-line-pic/src/DMonth.vue')['default']
-    ElButton: typeof import('element-plus/es')['ElButton']
-    ElIcon: typeof import('element-plus/es')['ElIcon']
-    ElImage: typeof import('element-plus/es')['ElImage']
-    ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
     JDay: typeof import('./../components/three-line-pic/src/JDay.vue')['default']
     VueMarkdown: typeof import('./../components/VueMarkdown.vue')['default']
     YwzChart: typeof import('./../components/three-line-pic/src/YwzChart.vue')['default']

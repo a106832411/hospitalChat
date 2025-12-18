@@ -1,6 +1,10 @@
 <template>
   <div class="w-full h-full flex p-2  " style="background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);">
-    <div style="width: 21.4vw;"><el-image :src="bgimg" fit="contain"> </el-image></div>
+    <div style="width: 21.4vw;" class="  relative">
+      <el-image :src="bgimg" fit="contain"> </el-image>
+      <div class="  absolute top-20 left-0 bottom-0 right-0 p-10">   <el-image :src="title" fit="contain" ></el-image></div>
+   
+    </div>
     <div class="w-full">
       <div class="flex justify-end items-center mt-2">
         <div class="p-2 px-6 rounded-full  cursor-pointer bg-white mr-5" v-if="clickBot != 'none'"
@@ -70,6 +74,7 @@ import { useUserStore } from '/@/store'
 import bgimg from '/@/assets/img/backimage.png'
 import { ElementPlus, Paperclip, Promotion } from '@element-plus/icons-vue';
 import chatPage from './chatPage.vue'
+import title from '/@/assets/img/title.png'
 const clickBot = ref('none')
 const store = useUserStore()
 

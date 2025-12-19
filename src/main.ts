@@ -3,27 +3,20 @@ import App from './App.vue'
 // 引入 vue-router
 import router from './router'
 // 引入 pinia
-import { useUserStore } from './store'
 
 //引入element-plus-x
 import ElementPlusX from 'vue-element-plus-x'
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
 
-import store from './store'
+// import store from './store'
 import './assets/css/index.css'
 import 'animate.css'
-// 生产环境Mock
-if (import.meta.env.PROD) {
-  import('../mock/setupProdMock').then(({ setupProdMockServer }) => {
-    setupProdMockServer()
-  })
-}
 // 单独引入 ElMessage 和 ElMessageBox 的样式
 import 'element-plus/theme-chalk/el-message.css'
 import 'element-plus/theme-chalk/el-message-box.css'
-const app = createApp(App).use(store)
-
-// 获取基础数据
-await useUserStore().getData()
+const app = createApp(App)
 
 app.use(router).mount('#app')
 app.use(ElementPlusX)
+app.use(ElementPlus)

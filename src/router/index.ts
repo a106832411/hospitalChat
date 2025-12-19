@@ -1,10 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
+import HelloWorld from '../components/HelloWorld.vue'
 // 配置路由信息
 const routes: RouteRecordRaw[] = [
   {
-    path: '/home',
-    redirect: '/src/components/HelloWorld.vue',
+    path: '/',
+    component: HelloWorld,
   },
 ]
 

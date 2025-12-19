@@ -17,6 +17,7 @@ import 'element-plus/theme-chalk/el-message.css'
 import 'element-plus/theme-chalk/el-message-box.css'
 const app = createApp(App)
 
-app.use(router).mount('#app')
-app.use(ElementPlusX)
 app.use(ElementPlus)
+app.use(ElementPlusX)
+app.use(router)
+app.mount('#app')
